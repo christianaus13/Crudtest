@@ -1,6 +1,6 @@
-package repository;
+package com.example.CRUDTestApp.repository;
 
-import entity.Book;
+import com.example.CRUDTestApp.entity.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

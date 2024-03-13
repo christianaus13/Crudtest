@@ -1,4 +1,4 @@
-package entity;
+package com.example.CRUDTestApp.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

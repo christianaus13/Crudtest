@@ -1,7 +1,7 @@
-package controller;
+package com.example.CRUDTestApp.controller;
 
-import entity.Book;
-import repository.BookRepository;
+import com.example.CRUDTestApp.entity.Book;
+import com.example.CRUDTestApp.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
