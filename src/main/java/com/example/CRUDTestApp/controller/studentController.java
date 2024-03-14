@@ -25,9 +25,10 @@ public class studentController {
             if (studentList.isEmpty()){
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
+            return  new ResponseEntity<>(HttpStatus.OK);
 
 
-        }catch (Exception ex){
+        } catch (Exception ex){
             return  new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 
         }
