@@ -12,6 +12,6 @@ public interface StudentService {
     ResponseEntity<Book> getBookById(Long id);
 
 
-    public ResponseEntity<Book> addBook(Book book);
+    ResponseEntity<Book> addBook(Book book);
 
 }
