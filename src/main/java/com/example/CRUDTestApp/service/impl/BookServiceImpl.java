@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -59,6 +60,27 @@ public class BookServiceImpl implements BookService {
 
         }catch (Exception ex){
             return  new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    @Override
+    public ResponseEntity<Book>updateBook(Long id,Book newBookData) {
+        Optional<Book> oldBookData = bookRepository.findById(id);
+        try {
+
+            if (oldBookData.isPresent()) {
+                Book updatedBookdata = oldBookData.get();
+
+                updatedBookdata.setTitle(newBookData.getTitle());
+                updatedBookdata.setAuthor(newBookData.getAuthor());
+                updatedBookdata.setCategory(newBookData.getCategory());
+
+                Book bookObj = bookRepository.save(updatedBookdata);
+
+                return new ResponseEntity<>(bookObj, HttpStatus.OK);
+            }
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

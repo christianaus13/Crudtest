@@ -14,4 +14,6 @@ public interface BookService {
 
     ResponseEntity<Book> addBook(Book book);
 
+    ResponseEntity<Book>updateBook(Long id,Book newBookData);
+
 }

@@ -13,6 +13,7 @@ package com.example.CRUDTestApp.controller;
 import com.example.CRUDTestApp.entity.Book;
 import com.example.CRUDTestApp.repository.BookRepository;
 import com.example.CRUDTestApp.service.iface.BookService;
+import com.example.CRUDTestApp.service.impl.BookServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -47,20 +48,7 @@ public class BookController {
 
     @PostMapping("/updateBookById/(id)")
     public ResponseEntity<Book> updateBookById(@PathVariable Long id, @RequestBody Book newBookData){
-        Optional<Book>oldBookData= bookRepository.findById(id);
-
-        if (oldBookData.isPresent()){
-            Book updatedBookdata=oldBookData.get();
-
-            updatedBookdata.setTitle(newBookData.getTitle());
-            updatedBookdata.setAuthor(newBookData.getAuthor());
-            updatedBookdata.setCategory(newBookData.getCategory());
-
-            Book bookObj= bookRepository.save(updatedBookdata);
-
-            return new ResponseEntity<>(bookObj,HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(studentService.updateBook(id,newBookData).getStatusCode());
     }
 
     @DeleteMapping("/deleteBookById/(id)")
