@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
-public interface StudentService {
+public interface BookService {
 
     ResponseEntity<List<Book>> getAllBooks();
 

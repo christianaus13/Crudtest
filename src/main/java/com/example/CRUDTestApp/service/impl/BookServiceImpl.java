@@ -2,7 +2,7 @@ package com.example.CRUDTestApp.service.impl;
 
 import com.example.CRUDTestApp.entity.Book;
 import com.example.CRUDTestApp.repository.BookRepository;
-import com.example.CRUDTestApp.service.iface.StudentService;
+import com.example.CRUDTestApp.service.iface.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class StudentServiceImpl implements StudentService {
+public class BookServiceImpl implements BookService {
 
     @Autowired
     private BookRepository bookRepository;

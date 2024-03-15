@@ -12,7 +12,7 @@ package com.example.CRUDTestApp.controller;
 
 import com.example.CRUDTestApp.entity.Book;
 import com.example.CRUDTestApp.repository.BookRepository;
-import com.example.CRUDTestApp.service.iface.StudentService;
+import com.example.CRUDTestApp.service.iface.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +28,7 @@ public class BookController {
     @Autowired
     private BookRepository bookRepository;
     @Autowired
-    private StudentService studentService;
+    private BookService studentService;
 
     @GetMapping("/getAllBooks")
     public ResponseEntity<List<Book>> getAllBooks(){
